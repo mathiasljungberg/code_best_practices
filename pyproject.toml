@@ -1,0 +1,11 @@
+[project]
+name = "code-best-practices"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "black>=26.1.0",
+    "numpy>=2.4.2",
+    "pytest>=9.0.2",
+]
