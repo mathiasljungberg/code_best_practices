@@ -31,9 +31,6 @@ real(kind=wp), dimension(:), intent(out):: e_i
 !! local variables
 integer:: i,j,ii,jj,npoints,nstates
 real(kind=wp), dimension(:,:), allocatable::Mat_tmp, H_kin
-!!!real(kind=wp):: 
-!!real(kind=wp), dimension(nstates)::wnf_t,wnf_old
-!! lapack
 real(kind=wp), dimension(:),allocatable:: W
 real(kind=wp), dimension(:),allocatable:: WORK
 integer:: INFO, LWORK
@@ -50,16 +47,7 @@ allocate(Mat_tmp(nstates,nstates), H_kin(nstates,nstates), W(nstates),&
      WORK(LWORK))
 
 npoints = (nstates-1)/2
-!
-!!write(6,*) shape(H_kin), shape(c_i), shape(e_i)
-!write(6,*) "lalalalalalal"
-!write(6,*) shape(c_i), shape(e_i)
-!
-!write(6,*) shape(Mat_tmp)
-!
-!!set up kinetic energy for sinc DVR                                                                                                                                                                                
 
-!
 H_kin=0 
 
 do i = -npoints,npoints
